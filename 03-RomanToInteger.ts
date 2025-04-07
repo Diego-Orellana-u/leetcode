@@ -38,3 +38,45 @@
 // 1 <= s.length <= 15
 // s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
 // It is guaranteed that s is a valid roman numeral in the range [1, 3999].
+
+// Solution 1: very ugly but beats 92.15% of other solutions
+function romanToInt(s: string): number {
+  let arr: string[] = s.split("");
+  let finalNum: number = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === "I") {
+      if (arr[i + 1] === "V") {
+        finalNum += 4;
+      } else if (arr[i + 1] === "X") {
+        finalNum += 9;
+      } else {
+        finalNum += 1;
+      }
+    } else if (arr[i] === "X") {
+      if (arr[i + 1] === "L") {
+        finalNum += 40;
+      } else if (arr[i + 1] === "C") {
+        finalNum += 90;
+      } else if (arr[i - 1] !== "I") {
+        finalNum += 10;
+      }
+    } else if (arr[i] === "C") {
+      if (arr[i + 1] === "D") {
+        finalNum += 400;
+      } else if (arr[i + 1] === "M") {
+        finalNum += 900;
+      } else if (arr[i - 1] !== "X") {
+        finalNum += 100;
+      }
+    } else if (arr[i] === "V" && arr[i - 1] !== "I") {
+      finalNum += 5;
+    } else if (arr[i] === "L" && arr[i - 1] !== "X") {
+      finalNum += 50;
+    } else if (arr[i] === "D" && arr[i - 1] !== "C") {
+      finalNum += 500;
+    } else if (arr[i] === "M" && arr[i - 1] !== "C") {
+      finalNum += 1000;
+    }
+  }
+  return finalNum;
+}
