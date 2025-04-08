@@ -82,7 +82,7 @@ function romanToInt(s: string): number {
 }
 
 // Solution 2:
-function romanToInt(s: string): number {
+function romanToIntTwo(s: string): number {
   const calcScale = (c: string, a1: string, a2: string): number => {
     return c === a1 || c === a2 ? -1 : 1;
   };
