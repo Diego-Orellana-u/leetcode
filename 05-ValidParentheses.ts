@@ -34,3 +34,27 @@
 
 // 1 <= s.length <= 104
 // s consists of parentheses only '()[]{}'.
+
+// My First Solution:
+function isValid(s: string): boolean {
+  let arr = s.split("");
+  let arrLength = arr.length;
+  for (let i = 0; i < arrLength; i++) {
+    for (let k = 0; k < arrLength; k++) {
+      if (arr[k] === "(" && arr[k + 1] === ")") {
+        arr.splice(k, 2);
+      }
+
+      if (arr[k] === "{" && arr[k + 1] === "}") {
+        arr.splice(k, 2);
+      }
+
+      if (arr[k] === "[" && arr[k + 1] === "]") {
+        arr.splice(k, 2);
+      }
+    }
+  }
+
+  if (arr.length === 0) return true;
+  return false;
+}
