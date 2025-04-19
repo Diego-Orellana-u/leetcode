@@ -58,3 +58,16 @@ function isValid(s: string): boolean {
   if (arr.length === 0) return true;
   return false;
 }
+
+// My second solution:
+function isValidTwo(s: string): boolean {
+  let arrLength = s.length;
+  for (let i = 0; i < arrLength; i++) {
+    s = s.replaceAll("()", "");
+    s = s.replaceAll("{}", "");
+    s = s.replaceAll("[]", "");
+  }
+
+  if (s.length === 0) return true;
+  return false;
+}
