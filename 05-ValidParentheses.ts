@@ -71,3 +71,5 @@ function isValidTwo(s: string): boolean {
   if (s.length === 0) return true;
   return false;
 }
+
+// Both solutions are very time consuming, so I'll create one more optimized
