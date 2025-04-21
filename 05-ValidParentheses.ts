@@ -72,4 +72,31 @@ function isValidTwo(s: string): boolean {
   return false;
 }
 
-// Both solutions are very time consuming, so I'll create one more optimized
+// Better solution:
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+let isValidThree = function (s) {
+  const pairs = {
+    "(": ")",
+    "[": "]",
+    "{": "}",
+  };
+
+  const stringArr = s.split("");
+  const brackets = [];
+  for (let i = 0; i < stringArr.length; i++) {
+    if (pairs[stringArr[i]]) {
+      brackets.push(stringArr[i]);
+    } else {
+      const lastBracket = brackets.pop();
+      if (pairs[lastBracket] === stringArr[i]) {
+        continue;
+      } else {
+        return false;
+      }
+    }
+  }
+  return brackets.length === 0;
+};
