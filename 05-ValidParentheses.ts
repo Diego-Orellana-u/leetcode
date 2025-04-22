@@ -100,3 +100,4 @@ let isValidThree = function (s) {
   }
   return brackets.length === 0;
 };
+
