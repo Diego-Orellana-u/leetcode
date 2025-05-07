@@ -9,11 +9,11 @@ main()
   upper = 300;
   step = 20;
 
-  fahr = lower;
+  fahr = upper;
   printf("%s \n", "List of temperatures");
-  while (fahr <= upper){
+  while (fahr >= lower){
     celsius = (5.0/9.0) * (fahr-32.0);
     printf("%3.0f %6.1f\n", fahr, celsius);
-    fahr = fahr + step;
+    fahr = fahr - step;
   }
 }
