@@ -9,5 +9,5 @@ main()
   {
     ++nc;
   }
-  printf("%3ld\n",nc - 1);
+  printf("%3ld\n",nc);
 }
