@@ -4,6 +4,16 @@ main(){
   int c;
 
   while((c=getchar() != EOF)){
-    if()
+    if(c == '\t'){
+      putchar("\t");
+    }
+
+    if(c == '\b'){
+      putchar("\b");
+    }
+
+    if(c == '\\'){
+      putchar("\\");
+    }
   }
 }
