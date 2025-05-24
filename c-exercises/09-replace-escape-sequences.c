@@ -5,15 +5,17 @@ main(){
 
   while((c=getchar() != EOF)){
     if(c == '\t'){
-      putchar("\t");
+      putchar('\t');
     }
 
     if(c == '\b'){
-      putchar("\b");
+      putchar('\b');
     }
 
     if(c == '\\'){
-      putchar("\\");
+      putchar('\\');
     }
+    putchar(c);
   }
+  return 0;
 }

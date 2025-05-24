@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+main() {
     int c;
     int in_blank = 0;     
 
@@ -14,6 +14,6 @@ int main(void) {
             putchar(c);     
             in_blank = 0;   
     }
-
+  }
     return 0;
 }
